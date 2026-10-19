@@ -1,0 +1,47 @@
+{
+  "repository": "https://github.com/zeux/meshoptimizer",
+  "commit": "f0a684f11ead064e176775c9b796f82a55910e92",
+  "license": "MIT",
+  "files": [
+    {
+      "path": "LICENSE.md",
+      "sha256": "f03037ca7bad1e3eb7f4a63fa6084a8baabd5ba30d3c239a9a7f35705d873e26",
+      "git_blob_sha": "468827f4b86ef754465396a9e163db25af406626"
+    },
+    {
+      "path": "src/meshoptimizer.h",
+      "sha256": "2d0877a66d7053250813b8430ae560a4836063df7d2daffa445c8b2c4ccdce66",
+      "git_blob_sha": "92763589fb934252708d7b17b7e734303525e924"
+    },
+    {
+      "path": "src/allocator.cpp",
+      "sha256": "036b0f875c51a086a6f66f4fff4818cded51e84a7bfa6490fd6fff54b2f8d32c",
+      "git_blob_sha": "79bd9aa04467f75d2e4c10ef0defbaaac978210e"
+    },
+    {
+      "path": "src/simplifier.cpp",
+      "sha256": "719303b6970398631e30724e8eebc6cd2e7e08b67fe8ab7cbf7eecafdaa08616",
+      "git_blob_sha": "85c502524f439be82198dc451caba27a62b720de"
+    },
+    {
+      "path": "src/indexgenerator.cpp",
+      "sha256": "f362cdcd8af10016333bf699347a9364335987f413f061e5b7e8cafe3b498948",
+      "git_blob_sha": "0f29614000f5097164ae5323a740c5bd782185b7"
+    },
+    {
+      "path": "src/vcacheoptimizer.cpp",
+      "sha256": "618429ef4db8ab9b16fde4e73dcf425d89452acbf103085478bc8b1761fa6689",
+      "git_blob_sha": "e4ecc71d36e5acb28752c03d0e28df33175f497b"
+    },
+    {
+      "path": "src/vfetchoptimizer.cpp",
+      "sha256": "aa534bb8150ca27ae229c58a0dc51f85f9acccbc5d4214f4c82edd91fc08e478",
+      "git_blob_sha": "4847465b6ab022c6f827125ae018171ff203f507"
+    },
+    {
+      "path": "src/quantization.cpp",
+      "sha256": "28282f555d42a118a6735f161b1ba78fcbe0d1810a6a337a399bd8471f79105e",
+      "git_blob_sha": "8571973022acc5433d156a48bca617b562f5b055"
+    }
+  ]
+}

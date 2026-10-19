@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "app": "Mesh to Play",
+  "version": "0.1.0",
+  "source": {
+    "name": "original-reactor.glb",
+    "sha256": "083dcdcb9bd0d64aff160a07bfed067c8dd1429d22fc5d64f48f06e9279bb03a",
+    "format": "GLB",
+    "bytes": 3691664
+  },
+  "summary": {
+    "vertices": 66177,
+    "triangles": 131072,
+    "dimensions": [
+      3.509999990463257,
+      1.2055000066757202,
+      3.509999990463257
+    ],
+    "units": "meters"
+  },
+  "findings": [
+    {
+      "id": "dense",
+      "severity": "info",
+      "title": "Dense source geometry",
+      "detail": "131,072 source triangles. Review achieved reduction and silhouette before engine use.",
+      "count": 131072,
+      "method": "Counted validated triangle indices."
+    }
+  ],
+  "results": [
+    {
+      "name": "LOD0.glb",
+      "triangles": 65536,
+      "vertices": 33281,
+      "bytes": 1852632,
+      "dimensions": [
+        3.509999990463257,
+        1.2055000066757202,
+        3.509999990463257
+      ],
+      "requested_ratio": 0.5,
+      "requested_triangles": 65536,
+      "achieved_ratio": 0.5,
+      "triangle_reduction": 0.5,
+      "byte_reduction": 0.49815801221346256,
+      "primitives": [
+        {
+          "requested_triangles": 65536,
+          "achieved_triangles": 65536,
+          "relative_error": 0.00021578578162007034,
+          "attribute_scalar_count": 5
+        }
+      ],
+      "sha256": "8cb0a6b666bffdcc9519133f90941fc97a2d96dbf87fb9bc0ce79f125c71390c"
+    },
+    {
+      "name": "LOD1.glb",
+      "triangles": 32768,
+      "vertices": 16809,
+      "bytes": 932308,
+      "dimensions": [
+        3.509999990463257,
+        1.2055000066757202,
+        3.509999990463257
+      ],
+      "requested_ratio": 0.25,
+      "requested_triangles": 32768,
+      "achieved_ratio": 0.25,
+      "triangle_reduction": 0.75,
+      "byte_reduction": 0.7474558898101236,
+      "primitives": [
+        {
+          "requested_triangles": 32768,
+          "achieved_triangles": 32768,
+          "relative_error": 0.0003661962691694498,
+          "attribute_scalar_count": 5
+        }
+      ],
+      "sha256": "2dab50e1b7c236aa66a481f1fee4f45ef5fb9a0fd2f9a55e22b91c2a4e3e5119"
+    },
+    {
+      "name": "LOD2.glb",
+      "triangles": 13106,
+      "vertices": 6798,
+      "bytes": 376036,
+      "dimensions": [
+        3.509999990463257,
+        1.205390453338623,
+        3.5067217350006104
+      ],
+      "requested_ratio": 0.1,
+      "requested_triangles": 13107,
+      "achieved_ratio": 0.0999908447265625,
+      "triangle_reduction": 0.9000091552734375,
+      "byte_reduction": 0.8981391589267063,
+      "primitives": [
+        {
+          "requested_triangles": 13107,
+          "achieved_triangles": 13106,
+          "relative_error": 0.0008278583409264684,
+          "attribute_scalar_count": 5
+        }
+      ],
+      "sha256": "9cbdbe3e981ec23888707d601cb7e78d0b29e1269bcc19c3546a29b2ad1270c2"
+    }
+  ],
+  "limitations": [
+    "Static triangle meshes only; no skins, animations, morph targets, compression or required extensions.",
+    "No texture baking, resizing, atlasing, rigging or collider generation. Embedded PNG/JPEG bytes and material data are preserved.",
+    "Ratios are requests: topology, UV seams, material boundaries and the error bound may prevent reaching a target. Each primitive target is floored to an integer with a minimum of one triangle.",
+    "Meshoptimizer error is its per-primitive relative geometric/attribute metric, not a measured image difference or engine performance guarantee.",
+    "GLB scenes are flattened to world-space instances; output coordinates are y-up. Source GLB units are meters; OBJ units are unknown until explicitly scaled.",
+    "The browser shows geometry inspection shading, not textured material appearance.",
+    "Unity integration is supplied but has not been executed in Unity."
+  ],
+  "preview_note": "Complete source and candidate geometry; no preview subset or decimation.",
+  "settings": {
+    "mode": "prepare",
+    "ratios": [
+      0.5,
+      0.25,
+      0.1
+    ],
+    "error": 0.01,
+    "height": null,
+    "bottom_center": false
+  },
+  "conversion": {
+    "uniform_scale": 1,
+    "pivot_subtracted": [
+      0,
+      0,
+      0
+    ],
+    "requested_longest_dimension_meters": null,
+    "applied_to_outputs": true
+  },
+  "provenance": {
+    "processor": "meshoptimizer attribute-aware simplifier",
+    "native_library_sha256": "c7e114f80ed979a0bae928ba1a138aa290f720a36b19ee0579dd23ce196a6a3c",
+    "input_sha256": "083dcdcb9bd0d64aff160a07bfed067c8dd1429d22fc5d64f48f06e9279bb03a",
+    "unreferenced_vertices_removed": 0,
+    "bounds_method": "World coordinates of triangle-referenced vertices only.",
+    "outputs": {
+      "LOD0.glb": {
+        "sha256": "8cb0a6b666bffdcc9519133f90941fc97a2d96dbf87fb9bc0ce79f125c71390c",
+        "bytes": 1852632
+      },
+      "LOD1.glb": {
+        "sha256": "2dab50e1b7c236aa66a481f1fee4f45ef5fb9a0fd2f9a55e22b91c2a4e3e5119",
+        "bytes": 932308
+      },
+      "LOD2.glb": {
+        "sha256": "9cbdbe3e981ec23888707d601cb7e78d0b29e1269bcc19c3546a29b2ad1270c2",
+        "bytes": 376036
+      },
+      "after.msh": {
+        "sha256": "cb7f66d3dd455362e40020f87eb8f426e447f7ec4f290954f5ec6280a42c1877",
+        "bytes": 1185816
+      },
+      "before.msh": {
+        "sha256": "be99cb037121d0488df5bc568b986e44ca067043938845f760958d73d912d139",
+        "bytes": 2367000
+      },
+      "source.glb": {
+        "sha256": "083dcdcb9bd0d64aff160a07bfed067c8dd1429d22fc5d64f48f06e9279bb03a",
+        "bytes": 3691664
+      }
+    }
+  },
+  "elapsed_seconds": 2.0145
+}

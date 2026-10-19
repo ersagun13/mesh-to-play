@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+native/*.dylib
+native/*.so
+native/*.dll
+.meshplay-jobs/
+results/

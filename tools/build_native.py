@@ -58,14 +58,23 @@ def validate_in_subprocess(path):
         raise BuildError('Native library validation failed: ' + result.stderr.strip())
 
 
+def select_compiler(system, compiler=None):
+    if compiler:
+        return compiler
+    names = ('cl', 'c++', 'clang++', 'g++') if system == 'Windows' else ('c++', 'clang++', 'g++')
+    for name in names:
+        found = shutil.which(name)
+        if found:
+            return found
+    return None
+
+
 def build(root=ROOT, compiler=None):
     vendor = root / 'third_party' / 'meshoptimizer'
     verify_sources(vendor)
     system = platform.system()
     output = root / 'native' / library_name(system)
-    compiler = compiler or shutil.which('c++') or shutil.which('clang++') or shutil.which('g++')
-    if system == 'Windows':
-        compiler = compiler or shutil.which('cl')
+    compiler = select_compiler(system, compiler)
     if not compiler:
         raise BuildError('A C++ compiler is required. macOS: Xcode command line tools; '
                          'Linux: g++; Windows: an MSVC Developer Command Prompt or MinGW.')

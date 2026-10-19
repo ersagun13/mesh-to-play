@@ -3,6 +3,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+from unittest import mock
 
 SPEC = importlib.util.spec_from_file_location('build_native', Path(__file__).with_name('build_native.py'))
 
@@ -12,6 +13,12 @@ class BuildTests(unittest.TestCase):
         module = importlib.util.module_from_spec(SPEC)
         SPEC.loader.exec_module(module)
         return module
+
+    def test_windows_compiler_prefers_msvc_when_available(self):
+        module = self.load()
+        compilers = {'cl': 'cl.exe', 'c++': 'mingw-c++.exe'}
+        with mock.patch.object(module.shutil, 'which', side_effect=lambda name: compilers.get(name)):
+            self.assertEqual(module.select_compiler('Windows'), compilers['cl'])
 
     def test_source_integrity_rejects_changed_vendor_file(self):
         module = self.load()
